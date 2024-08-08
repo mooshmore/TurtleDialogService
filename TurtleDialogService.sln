@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurtleDialogService.DemoApp", "TurtleDialogService.DemoApp\TurtleDialogService.DemoApp.csproj", "{91C4B243-6A55-4FA7-89F5-900E7CA74CEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurtleDialogService.Service", "TurtleDialogService.Service\TurtleDialogService.Service.csproj", "{273FD2FA-90E8-417E-805E-FC82D3810923}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91C4B243-6A55-4FA7-89F5-900E7CA74CEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91C4B243-6A55-4FA7-89F5-900E7CA74CEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91C4B243-6A55-4FA7-89F5-900E7CA74CEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91C4B243-6A55-4FA7-89F5-900E7CA74CEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{273FD2FA-90E8-417E-805E-FC82D3810923}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{273FD2FA-90E8-417E-805E-FC82D3810923}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{273FD2FA-90E8-417E-805E-FC82D3810923}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{273FD2FA-90E8-417E-805E-FC82D3810923}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F4C6A7E6-A2B8-4410-BF96-EFEBDA548825}
+	EndGlobalSection
+EndGlobal
