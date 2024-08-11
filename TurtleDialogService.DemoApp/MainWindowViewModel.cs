@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TurtleDialogService.DemoApp
+﻿namespace TurtleDialogService.DemoApp
 {
-    class MainWindowViewModel
+    internal class MainWindowViewModel
     {
     }
 }

@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="TurtleDialogService.Service.Dialogs.Option.OptionDialogView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TurtleDialogService.Service.Dialogs.Option"
+             xmlns:converters="clr-namespace:CrossUtilitesWPF.Converters;assembly=CrossUtilitiesWPF"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             d:DataContext="{d:DesignInstance Type=local:OptionDialogViewModel}">
+
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <converters:BoolToVisibilityConverter x:Key="BoolToVisibility"/>
+            <converters:NullToVisibilityConverter x:Key="NullToVisibility"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <StackPanel  Margin="10">
+
+        <TextBlock Text="{Binding Message}" 
+                   Margin="0 25 0 0"
+                   FontSize="13"
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Center"
+                   TextAlignment="Center"
+                   TextWrapping="Wrap" 
+                   Visibility="{Binding Message, Converter={StaticResource NullToVisibility}}"
+                   />
+
+        <DataGrid x:Name="MainDataGrid"
+                  Margin="0 20 0 0"
+                  MaxHeight="300"
+                  MaxWidth="800"
+                  SelectionUnit="Cell"
+                  HeadersVisibility="Column"
+                  IsReadOnly="True"
+                  ItemsSource="{Binding ItemCollection.DefaultView}" 
+                  Visibility="{Binding ItemCollection, Converter={StaticResource NullToVisibility}}"
+                  />
+
+        <StackPanel Orientation="Horizontal" 
+                    HorizontalAlignment="Center" 
+                    Margin="0 40 0 0">
+            
+            <Button Content="{Binding PositiveButtonContent}"
+                    Command="{Binding PositiveActionCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}"
+                    IsDefault="True" 
+                    />
+            
+            <Button Content="{Binding NegativeButtonContent}"
+                    Command="{Binding NegativeActionCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}"
+                    Visibility="{Binding NegativeButtonContent, Converter={StaticResource NullToVisibility}}"
+                    IsCancel="True"
+                    />
+            
+        </StackPanel>
+    </StackPanel>
+</UserControl>

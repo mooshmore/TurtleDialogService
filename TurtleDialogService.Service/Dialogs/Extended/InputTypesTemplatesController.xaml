@@ -1,0 +1,31 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:dialogInputs="clr-namespace:TurtleDialogService.Service.Core.Models.DialogInput">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="InputTypesTemplates/CheckBoxTemplate.xaml"/>
+        <ResourceDictionary Source="InputTypesTemplates/ComboBoxTemplate.xaml"/>
+        <ResourceDictionary Source="InputTypesTemplates/NestedComboBoxTemplate.xaml"/>
+        <ResourceDictionary Source="InputTypesTemplates/TextBoxTemplate.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <DataTrigger x:Key="TextBoxTrigger" Binding="{Binding InputType}" Value="{x:Static dialogInputs:DialogInputType.TextBox}" />
+
+    <Style x:Key="TypedValueHelper" TargetType="{x:Type ContentControl}" BasedOn="{StaticResource DefaultContentControl}">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding InputType}" Value="{x:Static dialogInputs:DialogInputType.CheckBox}">
+                <Setter Property="ContentTemplate" Value="{StaticResource CheckBoxTemplate}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding InputType}" Value="{x:Static dialogInputs:DialogInputType.ComboBox}">
+                <Setter Property="ContentTemplate" Value="{StaticResource ComboBoxTemplate}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding InputType}" Value="{x:Static dialogInputs:DialogInputType.NestedComboBox}">
+                <Setter Property="ContentTemplate" Value="{StaticResource NestedComboBoxTemplate}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding InputType}" Value="{x:Static dialogInputs:DialogInputType.TextBox}">
+                <Setter Property="ContentTemplate" Value="{StaticResource TextBoxTemplate}" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,45 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"                    
+                    xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
+                    xmlns:WPFbehaviors="clr-namespace:CrossUtilitesWPF.Behaviors;assembly=CrossUtilitiesWPF"
+                    xmlns:resources="clr-namespace:TurtleDialogService.Service.Resources">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/TurtleDialogService.Service;component/Core/Bases/DefaultStylingDictionary.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <DataTemplate x:Key="ComboBoxTemplate">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" SharedSizeGroup="TitleColumn"/>
+                <ColumnDefinition Width="Auto" SharedSizeGroup="InputColumn"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Text="{Binding InputTitle}" VerticalAlignment="Center" Margin="0 0 20 0"/>
+
+            <ComboBox Grid.Column="1" 
+                      x:Name="Input" 
+                      WPFbehaviors:SetFocusBehavior.Focus="{Binding ShouldFocus}">
+                <ComboBox.Style>
+                    <Style TargetType="ComboBox" BasedOn="{StaticResource DefaultComboBox}">
+                        <Setter Property="ItemsSource" Value="{Binding ValuesList}"/>
+                        <Setter Property="IsEditable" Value="{Binding AllowEditing}"/>
+                        <Setter Property="Text" Value="{Binding Value}"/>
+                    </Style>
+                </ComboBox.Style>
+                
+                <!--Hides the tooltip when the input is clicked-->
+                <behaviors:Interaction.Triggers>
+                    <behaviors:EventTrigger EventName="PreviewMouseLeftButtonUp">
+                        <behaviors:InvokeCommandAction Command="{Binding ElementActionCommand}" />
+                    </behaviors:EventTrigger>
+                </behaviors:Interaction.Triggers>
+            </ComboBox>
+
+            <resources:RequiredFieldControl Grid.Column="2"/>
+
+        </Grid>
+    </DataTemplate>
+    
+</ResourceDictionary>
