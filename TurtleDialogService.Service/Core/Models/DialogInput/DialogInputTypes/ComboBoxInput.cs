@@ -23,6 +23,9 @@
                            bool autoSetValue = true,
                            bool allowEditing = false) : base(name, DialogInputType.ComboBox, defaultValue, inputTitle)
         {
+            // Todo: only required/most important positions should be in the constructor.
+            // All the other stuff like auto set value should be configurable through properties, that applies to all input constructors.
+            // Todo: input title / label should be the primary required position, not the input title.
             ValuesList = valuesList;
             AllowEditing = allowEditing;
 

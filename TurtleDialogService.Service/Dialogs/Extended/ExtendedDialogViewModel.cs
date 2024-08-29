@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using TurtleDialogService.Service.Core.Bases;
+﻿using TurtleDialogService.Service.Core.Bases;
 using TurtleDialogService.Service.Core.Models;
 using TurtleDialogService.Service.Core.Models.DialogInput;
 

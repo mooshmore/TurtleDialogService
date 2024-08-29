@@ -1,4 +1,5 @@
-﻿using System.Configuration;
+﻿using CrossUtilitiesWPF.MiscUtilities;
+using System.Configuration;
 using System.Data;
 using System.Windows;
 
@@ -9,6 +10,12 @@ namespace TurtleDialogService.DemoApp
     /// </summary>
     public partial class App : Application
     {
-    }
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
 
+            // Assign viewModels to views
+            DataTemplateManager.LoadDataTemplatesByConvention();
+        }
+    }
 }

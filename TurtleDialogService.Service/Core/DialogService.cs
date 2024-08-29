@@ -19,8 +19,7 @@ namespace TurtleDialogService.Service.Core
         {
             IDialogWindow window = new DialogWindow
             {
-                DataContext = viewModel,
-                ResizeMode = ResizeMode.NoResize
+                DataContext = viewModel
             };
             ((Window)window).WindowStartupLocation = WindowStartupLocation.CenterOwner;
             ((Window)window).Owner = Application.Current.MainWindow;

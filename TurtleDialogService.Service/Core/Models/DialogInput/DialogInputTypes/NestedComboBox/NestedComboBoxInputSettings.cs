@@ -16,6 +16,7 @@ namespace TurtleDialogService.Service.Core.Models.DialogInput.DialogInputTypes.N
         /// <param name="allowEditing">Sets whether the comboBox value can be edited.</param>
         public NestedComboBoxInputSettings(string defaultValue = "", string inputTitle = "", bool allowEmpty = false, bool allowEditing = false)
         {
+            // Todo: why is default value as primary here
             InputTitle = inputTitle;
             Value = defaultValue;
             OriginalValue = defaultValue;

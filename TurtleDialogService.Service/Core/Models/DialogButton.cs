@@ -21,6 +21,11 @@ namespace TurtleDialogService.Service.Core.Models
         /// <param name="isCancel">Assigns the ESC key event to this button is set to true.</param>
         public DialogButton(string content, string name = null, List<IDialogInput> dialogInputs = null, bool isDefault = false, bool isCancel = false)
         {
+            // Todo: dialog inputs should be called required inputs to better reflect what the parameter actually does, like "requiredInputs"
+            // Todo: DialogButton needs a interface.
+            // Todo: cleanup constructors, this is a mess.
+            // Todo: Dialog button should automatically "search" for required inputs, instead of requiring to provide them.
+            // Todo: constructor overloads have "dialogInputs" parameter name, where they actually only take a single input.
             Content = content;
             if (name == null)
                 name = content;

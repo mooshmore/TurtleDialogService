@@ -28,6 +28,10 @@ namespace TurtleDialogService.Service.Core.Models.DialogInput.DialogInputTypes.N
                            NestedComboBoxInputSettings secondaryComboBoxSettings,
                            string inputTitle = null)
         {
+            // Todo: rename input title to labels
+            // Todo: Can't this be done to accept any number of lists
+            // Todo: The main input title should be more centered and be bold / have bigger font
+
             // If the input title hasn't been specified assign the given name as the inputs title
             if (inputTitle == null)
                 inputTitle = name;

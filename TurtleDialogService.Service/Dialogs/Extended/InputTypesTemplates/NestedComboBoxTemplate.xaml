@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/TurtleDialogService.Service;component/Core/Bases/DefaultStylingDictionary.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/TurtleDialogService.Service;component/Resources/DefaultStylingDictionary.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
     <DataTemplate x:Key="NestedComboBoxTemplate">
@@ -24,7 +24,7 @@
             <!--Primary comboBox row-->
             <TextBlock VerticalAlignment="Center" Margin="0 15 20 0" Grid.Row="1">
                 <TextBlock.Style>
-                    <Style TargetType="TextBlock" BasedOn="{StaticResource DefaultTextblock}">
+                    <Style TargetType="TextBlock" BasedOn="{StaticResource DefaultTextBlock}">
                         <Setter Property="Text" Value="{Binding PrimaryComboBox.InputTitle}"/>
                     </Style>
                 </TextBlock.Style>
@@ -43,7 +43,7 @@
             <!--Nested comboBox row-->
             <TextBlock VerticalAlignment="Center" Margin="0 5 20 15" Grid.Row="2">
                 <TextBlock.Style>
-                    <Style TargetType="TextBlock" BasedOn="{StaticResource DefaultTextblock}">
+                    <Style TargetType="TextBlock" BasedOn="{StaticResource DefaultTextBlock}">
                         <Setter Property="Text" Value="{Binding SecondaryComboBox.InputTitle}"/>
                     </Style>
                 </TextBlock.Style>

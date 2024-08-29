@@ -26,6 +26,7 @@ namespace TurtleDialogService.Service.Core.Models.DialogInput.DialogInputTypes
             if (!AllowEmpty && string.IsNullOrWhiteSpace((string)Value))
             {
                 FocusControl();
+                // Todo: this pops up directly inside the input, instead of to its right.
                 SignalizeToolTip("This input can't be empty.");
                 return false;
             }

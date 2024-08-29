@@ -5,7 +5,7 @@
                     xmlns:resources="clr-namespace:TurtleDialogService.Service.Resources">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/TurtleDialogService.Service;component/Core/Bases/DefaultStylingDictionary.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/TurtleDialogService.Service;component/Resources/DefaultStylingDictionary.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
     <DataTemplate x:Key="ComboBoxTemplate">

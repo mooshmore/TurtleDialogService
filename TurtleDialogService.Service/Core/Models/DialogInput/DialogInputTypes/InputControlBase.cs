@@ -18,6 +18,8 @@ namespace TurtleDialogService.Service.Core.Models.DialogInput.DialogInputTypes
         /// <param name="inputTitle">The text that will be displayed in the UI next to the input. If not specified the <paramref name="name"/> will be displayed.</param>
         public InputControlBase(string name, DialogInputType inputType, object defaultValue = null, string inputTitle = null)
         {
+            // Todo: this should be abstract, and input types like checkbox should have its own class. 
+            // Todo: inputTitle should be called "label" instead.
             // If the input title hasn't been specified assign the given name as the inputs title
             if (inputTitle == null)
                 inputTitle = name;
@@ -40,7 +42,7 @@ namespace TurtleDialogService.Service.Core.Models.DialogInput.DialogInputTypes
         /// </summary>
         public void FocusControl()
         {
-            // This ugliness is required for the FocusBehavior to work properly.
+            // This awfulness is required for the FocusBehavior to work properly.
             ShouldFocus = false;
             RaisePropertyChanged(nameof(ShouldFocus));
             ShouldFocus = true;

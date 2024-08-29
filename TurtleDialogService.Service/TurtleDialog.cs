@@ -1,4 +1,5 @@
 ﻿using CrossUtilites;
+using CrossUtilitiesWPF.MiscUtilities;
 using System.Data;
 using TurtleDialogService.Service.Core;
 using TurtleDialogService.Service.Core.Bases;
@@ -15,6 +16,16 @@ namespace TurtleDialogService.Service
     /// </summary>
     public static class TurtleDialog
     {
+        /// <summary>
+        /// A constructor that configures the service.
+        /// </summary>
+        static TurtleDialog()
+        {
+            DataTemplateManager.LoadDataTemplatesByConvention();
+            // Todo: A method with 50 overloads isn't a great approach. Something like a builder or a "DialogComponents" class should be used instead.
+            // Todo: Inputs here should only require interfaces, and lists should be ienumerable.
+        }
+
         /// <summary>
         /// Displays the given dialog.
         /// </summary>
